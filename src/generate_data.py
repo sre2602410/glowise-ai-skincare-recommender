@@ -1,88 +1,210 @@
 import pandas as pd
 
 data = [
+    # CLEANSERS
     {
-        "product_name": "Ultra Hydrating Gel",
-        "brand": "AquaGlow",
-        "ingredients": "Water, Glycerin, Hyaluronic Acid, Aloe Vera, Phenoxyethanol",
-        "skin_type": "Dry, Normal",
-        "concern": "Hydration, Dryness",
-        "sensitive_skin_safe": True
+        "product_name": "Gentle Skin Cleanser",
+        "brand": "Cetaphil",
+        "ingredients": "Water, Glycerin, Cetearyl Alcohol, Panthenol, Niacinamide, Pantolactone",
+        "skin_type": "Dry, Sensitive, Normal",
+        "concern": "Hydration, Sensitivity",
+        "category": "Cleanser",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.8
     },
     {
-        "product_name": "Salicylic Acid Cleanser",
-        "brand": "ClearSkin",
-        "ingredients": "Water, Sodium Laureth Sulfate, Salicylic Acid, Cocamidopropyl Betaine, Glycerin",
+        "product_name": "Foaming Facial Cleanser",
+        "brand": "CeraVe",
+        "ingredients": "Water, Cocamidopropyl Hydroxysultaine, Glycerin, Sodium Lauroyl Sarcosinate, Niacinamide, Ceramide NP, Ceramide AP, Ceramide EOP",
         "skin_type": "Oily, Combination",
-        "concern": "Acne, Pores",
-        "sensitive_skin_safe": False
+        "concern": "Oiliness, Acne",
+        "category": "Cleanser",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.7
     },
     {
-        "product_name": "Niacinamide 10% Serum",
-        "brand": "BrightenUp",
-        "ingredients": "Water, Niacinamide, Zinc PCA, Pentylene Glycol, Xanthan Gum",
+        "product_name": "Squalane Cleanser",
+        "brand": "The Ordinary",
+        "ingredients": "Squalane, Aqua, Coco-Caprylate/Caprate, Glycerin",
         "skin_type": "All",
-        "concern": "Brightening, Acne, Oil Control",
-        "sensitive_skin_safe": True
+        "concern": "Hydration, Texture",
+        "category": "Cleanser",
+        "usage": "PM",
+        "sensitive_skin_safe": True,
+        "rating": 4.6
     },
     {
-        "product_name": "Retinol Night Cream",
-        "brand": "YouthRenew",
-        "ingredients": "Water, Caprylic/Capric Triglyceride, Retinol, Glycerin, Cetearyl Alcohol, Stearic Acid",
+        "product_name": "Acne Facial Cleanser",
+        "brand": "Mario Badescu",
+        "ingredients": "Water, Glycerin, Sodium Laureth Sulfate, Salicylic Acid, Aloe Barbadensis Leaf Juice",
+        "skin_type": "Oily, Combination",
+        "concern": "Acne, Oiliness",
+        "category": "Cleanser",
+        "usage": "Both",
+        "sensitive_skin_safe": False,
+        "rating": 4.2
+    },
+    # TONERS
+    {
+        "product_name": "Glycolic Acid 7% Toning Solution",
+        "brand": "The Ordinary",
+        "ingredients": "Water, Glycolic Acid, Aloe Barbadensis Leaf Water, Ginseng Root Extract",
+        "skin_type": "Normal, Oily, Combination",
+        "concern": "Texture, Brightening",
+        "category": "Toner",
+        "usage": "PM",
+        "sensitive_skin_safe": False,
+        "rating": 4.5
+    },
+    {
+        "product_name": "Supple Preparation Unscented Toner",
+        "brand": "Klairs",
+        "ingredients": "Water, Butylene Glycol, Dimethyl Sulfone, Betaine, Caprylic/Capric Triglyceride, Natto Gum, Sodium Hyaluronate",
+        "skin_type": "Sensitive, Dry, All",
+        "concern": "Hydration, Sensitivity",
+        "category": "Toner",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.9
+    },
+    {
+        "product_name": "BHA Liquid Exfoliant",
+        "brand": "Paula's Choice",
+        "ingredients": "Water, Methylpropanediol, Salicylic Acid, Polysorbate 20, Green Tea Extract",
+        "skin_type": "Oily, Combination",
+        "concern": "Pores, Acne, Texture",
+        "category": "Toner",
+        "usage": "Both",
+        "sensitive_skin_safe": False,
+        "rating": 4.9
+    },
+    {
+        "product_name": "Rice Toner",
+        "brand": "I'm From",
+        "ingredients": "Rice Extract, Methylpropanediol, Niacinamide, Portulaca Oleracea Extract",
         "skin_type": "Dry, Normal",
-        "concern": "Aging, Fine Lines",
-        "sensitive_skin_safe": False
+        "concern": "Brightening, Hydration",
+        "category": "Toner",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.8
+    },
+    # MOISTURIZERS
+    {
+        "product_name": "Hydro Boost Water Gel",
+        "brand": "Neutrogena",
+        "ingredients": "Water, Dimethicone, Glycerin, Sodium Hyaluronate",
+        "skin_type": "Oily, Combination, Normal",
+        "concern": "Hydration, Dryness",
+        "category": "Moisturizer",
+        "usage": "AM",
+        "sensitive_skin_safe": True,
+        "rating": 4.6
     },
     {
-        "product_name": "Mineral Sunscreen SPF 50",
-        "brand": "SunShield",
-        "ingredients": "Zinc Oxide, Titanium Dioxide, Water, Cyclopentasiloxane, Dimethicone",
-        "skin_type": "All, Sensitive",
-        "concern": "Sun Protection, Sensitivity",
-        "sensitive_skin_safe": True
+        "product_name": "CeraVe Moisturizing Cream",
+        "brand": "CeraVe",
+        "ingredients": "Water, Glycerin, Cetearyl Alcohol, Ceramide NP, Ceramide AP, Ceramide EOP, Hyaluronic Acid",
+        "skin_type": "Dry, Normal",
+        "concern": "Hydration, Barrier Repair",
+        "category": "Moisturizer",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.9
     },
     {
-        "product_name": "Vitamin C Serum",
-        "brand": "GlowBoost",
-        "ingredients": "Water, Ascorbic Acid, Ethoxydiglycol, Ferulic Acid, Panthenol",
+        "product_name": "Toleriane Double Repair",
+        "brand": "La Roche-Posay",
+        "ingredients": "Water, Glycerin, Dimethicone, Niacinamide, Ceramide NP",
+        "skin_type": "Sensitive, All",
+        "concern": "Sensitivity, Redness, Barrier Repair",
+        "category": "Moisturizer",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.8
+    },
+    {
+        "product_name": "Revitalift Night Cream",
+        "brand": "L'Oreal",
+        "ingredients": "Water, Glycerin, Niacinamide, Retinyl Palmitate",
+        "skin_type": "Normal, Dry",
+        "concern": "Aging, Wrinkles",
+        "category": "Moisturizer",
+        "usage": "PM",
+        "sensitive_skin_safe": False,
+        "rating": 4.1
+    },
+    # SERUMS (Adding some for routine richness)
+    {
+        "product_name": "Vitamin C 15% Super Serum",
+        "brand": "Paula's Choice",
+        "ingredients": "Water, Ascorbic Acid, Ferulic Acid, Tocopherol",
         "skin_type": "All",
         "concern": "Brightening, Dark Spots",
-        "sensitive_skin_safe": False
+        "category": "Serum",
+        "usage": "AM",
+        "sensitive_skin_safe": False,
+        "rating": 4.6
     },
     {
-        "product_name": "Centella Soothing Cream",
-        "brand": "CalmCare",
-        "ingredients": "Water, Centella Asiatica Extract, Glycerin, Squalane, Madecassoside",
-        "skin_type": "Sensitive, Dry",
+        "product_name": "Retinol 0.5% in Squalane",
+        "brand": "The Ordinary",
+        "ingredients": "Squalane, Retinol, Solanum Lycopersicum Fruit Extract",
+        "skin_type": "Dry, Normal",
+        "concern": "Aging, Fine Lines",
+        "category": "Serum",
+        "usage": "PM",
+        "sensitive_skin_safe": False,
+        "rating": 4.4
+    },
+    {
+        "product_name": "Hyaluronic Acid 2% + B5",
+        "brand": "The Ordinary",
+        "ingredients": "Water, Sodium Hyaluronate, Panthenol",
+        "skin_type": "All",
+        "concern": "Hydration, Dryness",
+        "category": "Serum",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.8
+    },
+    {
+        "product_name": "Advanced Night Repair",
+        "brand": "Estée Lauder",
+        "ingredients": "Water, Bifida Ferment Lysate, Tripeptide-32, Sodium Hyaluronate",
+        "skin_type": "All",
+        "concern": "Aging, Hydration",
+        "category": "Serum",
+        "usage": "PM",
+        "sensitive_skin_safe": True,
+        "rating": 4.8
+    },
+    {
+        "product_name": "Centella Unscented Serum",
+        "brand": "Purito",
+        "ingredients": "Centella Asiatica Extract, Niacinamide, Sodium Hyaluronate, Peptides",
+        "skin_type": "Sensitive, All",
         "concern": "Sensitivity, Redness",
-        "sensitive_skin_safe": True
+        "category": "Serum",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.7
     },
     {
-        "product_name": "Glycolic Acid Toner",
-        "brand": "Exfoli8",
-        "ingredients": "Water, Glycolic Acid, Arginine, Aloe Barbadensis Leaf Juice, Propanediol",
-        "skin_type": "Oily, Normal",
-        "concern": "Texture, Brightening",
-        "sensitive_skin_safe": False
-    },
-    {
-        "product_name": "Ceramide Barrier Balm",
-        "brand": "BarrierFix",
-        "ingredients": "Water, Ceramide NP, Ceramide AP, Ceramide EOP, Cholesterol, Phytosphingosine",
-        "skin_type": "Dry, Sensitive",
-        "concern": "Barrier Repair, Dryness",
-        "sensitive_skin_safe": True
-    },
-    {
-        "product_name": "Benzoyl Peroxide Spot Treatment",
-        "brand": "AcneStop",
-        "ingredients": "Water, Benzoyl Peroxide, Glycerin, Carbomer, Sodium Hydroxide",
-        "skin_type": "Oily",
-        "concern": "Acne",
-        "sensitive_skin_safe": False
+        "product_name": "Niacinamide 10% + Zinc 1%",
+        "brand": "The Ordinary",
+        "ingredients": "Water, Niacinamide, Zinc PCA",
+        "skin_type": "Oily, Combination",
+        "concern": "Brightening, Oiliness, Pores",
+        "category": "Serum",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.7
     }
 ]
 
 df = pd.DataFrame(data)
 df.to_csv("data/skincare_products.csv", index=False)
-print("Dataset created successfully at data/skincare_products.csv")
+print(f"Enriched dataset created with {len(data)} products across CTM categories.")

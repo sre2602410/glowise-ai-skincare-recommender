@@ -1,11 +1,19 @@
-product_name,brand,ingredients,skin_type,concern,sensitive_skin_safe
-Ultra Hydrating Gel,AquaGlow,"Water, Glycerin, Hyaluronic Acid, Aloe Vera, Phenoxyethanol","Dry, Normal","Hydration, Dryness",True
-Salicylic Acid Cleanser,ClearSkin,"Water, Sodium Laureth Sulfate, Salicylic Acid, Cocamidopropyl Betaine, Glycerin","Oily, Combination","Acne, Pores",False
-Niacinamide 10% Serum,BrightenUp,"Water, Niacinamide, Zinc PCA, Pentylene Glycol, Xanthan Gum",All,"Brightening, Acne, Oil Control",True
-Retinol Night Cream,YouthRenew,"Water, Caprylic/Capric Triglyceride, Retinol, Glycerin, Cetearyl Alcohol, Stearic Acid","Dry, Normal","Aging, Fine Lines",False
-Mineral Sunscreen SPF 50,SunShield,"Zinc Oxide, Titanium Dioxide, Water, Cyclopentasiloxane, Dimethicone","All, Sensitive","Sun Protection, Sensitivity",True
-Vitamin C Serum,GlowBoost,"Water, Ascorbic Acid, Ethoxydiglycol, Ferulic Acid, Panthenol",All,"Brightening, Dark Spots",False
-Centella Soothing Cream,CalmCare,"Water, Centella Asiatica Extract, Glycerin, Squalane, Madecassoside","Sensitive, Dry","Sensitivity, Redness",True
-Glycolic Acid Toner,Exfoli8,"Water, Glycolic Acid, Arginine, Aloe Barbadensis Leaf Juice, Propanediol","Oily, Normal","Texture, Brightening",False
-Ceramide Barrier Balm,BarrierFix,"Water, Ceramide NP, Ceramide AP, Ceramide EOP, Cholesterol, Phytosphingosine","Dry, Sensitive","Barrier Repair, Dryness",True
-Benzoyl Peroxide Spot Treatment,AcneStop,"Water, Benzoyl Peroxide, Glycerin, Carbomer, Sodium Hydroxide",Oily,Acne,False
+product_name,brand,ingredients,skin_type,concern,category,usage,sensitive_skin_safe,rating
+Gentle Skin Cleanser,Cetaphil,"Water, Glycerin, Cetearyl Alcohol, Panthenol, Niacinamide, Pantolactone","Dry, Sensitive, Normal","Hydration, Sensitivity",Cleanser,Both,True,4.8
+Foaming Facial Cleanser,CeraVe,"Water, Cocamidopropyl Hydroxysultaine, Glycerin, Sodium Lauroyl Sarcosinate, Niacinamide, Ceramide NP, Ceramide AP, Ceramide EOP","Oily, Combination","Oiliness, Acne",Cleanser,Both,True,4.7
+Squalane Cleanser,The Ordinary,"Squalane, Aqua, Coco-Caprylate/Caprate, Glycerin",All,"Hydration, Texture",Cleanser,PM,True,4.6
+Acne Facial Cleanser,Mario Badescu,"Water, Glycerin, Sodium Laureth Sulfate, Salicylic Acid, Aloe Barbadensis Leaf Juice","Oily, Combination","Acne, Oiliness",Cleanser,Both,False,4.2
+Glycolic Acid 7% Toning Solution,The Ordinary,"Water, Glycolic Acid, Aloe Barbadensis Leaf Water, Ginseng Root Extract","Normal, Oily, Combination","Texture, Brightening",Toner,PM,False,4.5
+Supple Preparation Unscented Toner,Klairs,"Water, Butylene Glycol, Dimethyl Sulfone, Betaine, Caprylic/Capric Triglyceride, Natto Gum, Sodium Hyaluronate","Sensitive, Dry, All","Hydration, Sensitivity",Toner,Both,True,4.9
+BHA Liquid Exfoliant,Paula's Choice,"Water, Methylpropanediol, Salicylic Acid, Polysorbate 20, Green Tea Extract","Oily, Combination","Pores, Acne, Texture",Toner,Both,False,4.9
+Rice Toner,I'm From,"Rice Extract, Methylpropanediol, Niacinamide, Portulaca Oleracea Extract","Dry, Normal","Brightening, Hydration",Toner,Both,True,4.8
+Hydro Boost Water Gel,Neutrogena,"Water, Dimethicone, Glycerin, Sodium Hyaluronate","Oily, Combination, Normal","Hydration, Dryness",Moisturizer,AM,True,4.6
+CeraVe Moisturizing Cream,CeraVe,"Water, Glycerin, Cetearyl Alcohol, Ceramide NP, Ceramide AP, Ceramide EOP, Hyaluronic Acid","Dry, Normal","Hydration, Barrier Repair",Moisturizer,Both,True,4.9
+Toleriane Double Repair,La Roche-Posay,"Water, Glycerin, Dimethicone, Niacinamide, Ceramide NP","Sensitive, All","Sensitivity, Redness, Barrier Repair",Moisturizer,Both,True,4.8
+Revitalift Night Cream,L'Oreal,"Water, Glycerin, Niacinamide, Retinyl Palmitate","Normal, Dry","Aging, Wrinkles",Moisturizer,PM,False,4.1
+Vitamin C 15% Super Serum,Paula's Choice,"Water, Ascorbic Acid, Ferulic Acid, Tocopherol",All,"Brightening, Dark Spots",Serum,AM,False,4.6
+Retinol 0.5% in Squalane,The Ordinary,"Squalane, Retinol, Solanum Lycopersicum Fruit Extract","Dry, Normal","Aging, Fine Lines",Serum,PM,False,4.4
+Hyaluronic Acid 2% + B5,The Ordinary,"Water, Sodium Hyaluronate, Panthenol",All,"Hydration, Dryness",Serum,Both,True,4.8
+Advanced Night Repair,Estée Lauder,"Water, Bifida Ferment Lysate, Tripeptide-32, Sodium Hyaluronate",All,"Aging, Hydration",Serum,PM,True,4.8
+Centella Unscented Serum,Purito,"Centella Asiatica Extract, Niacinamide, Sodium Hyaluronate, Peptides","Sensitive, All","Sensitivity, Redness",Serum,Both,True,4.7
+Niacinamide 10% + Zinc 1%,The Ordinary,"Water, Niacinamide, Zinc PCA","Oily, Combination","Brightening, Oiliness, Pores",Serum,Both,True,4.7
