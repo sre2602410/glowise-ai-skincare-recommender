@@ -81,20 +81,27 @@ class SkincareRecommender:
 
     def recommend_routine(self, user_profile):
         """
-        Generates a complete AM and PM CTM routine.
+        Generates a complete AM and PM CTM routine, adapted for Sephora dataset labels.
         """
-        categories = ['Cleanser', 'Toner', 'Serum', 'Moisturizer']
+        am_categories = ['Cleanser', 'Treatment', 'Moisturizer', 'Sunscreen']
+        pm_categories = ['Cleanser', 'Treatment', 'Eye cream', 'Moisturizer']
+        
         routine = {
             "AM": {},
             "PM": {}
         }
         
-        for time in ["AM", "PM"]:
-            for cat in categories:
-                rec = self.recommend(user_profile, top_n=1, category=cat, usage=time)
-                if not rec.empty:
-                    product = rec.iloc[0]
-                    routine[time][cat] = product.to_dict()
+        # AM Routine
+        for cat in am_categories:
+            rec = self.recommend(user_profile, top_n=1, category=cat, usage='AM')
+            if not rec.empty:
+                routine["AM"][cat] = rec.iloc[0].to_dict()
+                
+        # PM Routine
+        for cat in pm_categories:
+            rec = self.recommend(user_profile, top_n=1, category=cat, usage='PM')
+            if not rec.empty:
+                routine["PM"][cat] = rec.iloc[0].to_dict()
                     
         return routine
 

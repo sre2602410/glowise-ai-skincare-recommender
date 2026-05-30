@@ -2,12 +2,20 @@ from src.preprocessing import load_data, preprocess_dataframe
 from src.safety_filter import filter_by_safety, get_default_irritants
 from src.recommender import SkincareRecommender
 from src.explainability import explain_recommendation
+import os
 
 def get_routine(user_profile, avoided_ingredients=None):
     """
     Builds a complete AM/PM routine.
     """
-    df = load_data("data/skincare_products.csv")
+    # Use real dataset if it exists, fallback to small one
+    if os.path.exists("data/sephora_products.csv"):
+        df = load_data("data/sephora_products.csv")
+    elif os.path.exists("data/cosmetics.csv"):
+        df = load_data("data/cosmetics.csv")
+    else:
+        df = load_data("data/skincare_products.csv")
+        
     if df is None: return "Error: Could not load data."
     
     df = preprocess_dataframe(df)
