@@ -1,86 +1,71 @@
-# Glowise – AI-Based Skincare Recommendation System ✨
+# Glowise – AI-Powered Bespoke Skincare Ritual ✨
 
-Glowise is a production-style hybrid recommendation system designed to provide personalized skincare advice. It combines rule-based safety filtering with machine learning to ensure recommendations are both effective and safe for users.
+Glowise is a sophisticated, clinical-grade skincare recommendation system that combines computer vision, rule-based safety filtering, and natural language processing to curate the perfect routine for your unique skin profile.
 
-## 🚀 Features
+## 🚀 Key Features
 
-- **Personalized Recommendations**: Uses TF-IDF and Cosine Similarity to match products with user skin types and concerns.
-- **Safety Filtering**: Automatically excludes products containing ingredients the user is allergic to or common irritants for sensitive skin.
-- **Explainable AI (XAI)**: Provides clear, natural language explanations for every recommendation, highlighting key beneficial ingredients and safety aspects.
-- **Modern UI**: Built with Streamlit for a clean, interactive user experience.
+- **AI Skin Scanner (CNN)**: Utilizes Convolutional Neural Networks and OpenCV to analyze your skin from a photo, detecting concerns like redness, dark spots, and texture issues.
+- **Sephora Intelligence**: Powered by a real-world dataset of over 1,400+ premium products from brands like *Tatcha*, *Drunk Elephant*, and *The Ordinary*.
+- **AM/PM Bespoke Rituals**: Automatically synchronizes your day and night cycles with specialized categories like *Treatments*, *Eye Creams*, and *Sunscreen*.
+- **Safety & Biocompatibility**: A rigorous rule-based engine that cross-references product formulations against your allergies and sensitivity profile.
+- **Minimalist Luxury UI**: A refined, high-end interface featuring a cream and charcoal palette, elegant serif typography, and full Dark Mode support.
+- **Explainable AI (XAI)**: Transparent, ingredient-focused insights that explain the scientific reasoning behind every selection.
 
 ## 🏗️ Architecture
 
 ```text
-glowise-ai-skincare-recommender/
+glowise/
 │
 ├── data/
-│   └── skincare_products.csv      # Sample dataset of products
-│
-├── notebooks/
-│   └── experimentation.ipynb      # Exploration and ML prototyping
+│   ├── sephora_products.csv       # 1,400+ real-world products
+│   └── skincare_products.csv      # Initial seed dataset
 │
 ├── src/
-│   ├── preprocessing.py           # Data cleaning and normalization
-│   ├── recommender.py             # ML engine (TF-IDF + Cosine Similarity)
-│   ├── safety_filter.py           # Rule-based safety logic
-│   ├── explainability.py          # Natural language explanation generator
-│   └── utils.py                   # Helper functions
+│   ├── image_processor.py         # CNN & OpenCV Skin Analysis
+│   ├── recommender.py             # ML Engine (TF-IDF + Cosine Similarity)
+│   ├── safety_filter.py           # Biocompatibility Logic
+│   ├── preprocessing.py           # Data Pipeline & Normalization
+│   ├── explainability.py          # Clinical Insight Generator
+│   └── utils.py                   # System Utilities
 │
 ├── app/
-│   └── app.py                     # Streamlit web application
+│   └── app.py                     # Streamlit Luxury Interface
 │
-├── requirements.txt               # Project dependencies
-├── .gitignore                     # Git exclusion rules
-├── main.py                        # CLI entry point for testing
-└── README.md                      # Project documentation
+├── requirements.txt               # System Dependencies
+├── main.py                        # CLI Verification Engine
+└── README.md                      # Project Documentation
 ```
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: [Streamlit](https://streamlit.io/)
-- **Backend / ML**: [Python](https://www.python.org/), [Pandas](https://pandas.pydata.org/), [NumPy](https://numpy.org/), [Scikit-learn](https://scikit-learn.org/)
-- **ML Concepts**: TF-IDF Vectorization, Cosine Similarity, Content-Based Filtering.
+- **Computer Vision**: TensorFlow (CNN), OpenCV
+- **Data Science**: Pandas, NumPy, Scikit-learn
+- **Frontend**: Streamlit (Bespoke CSS)
+- **ML Logic**: TF-IDF Vectorization, Content-Based Filtering
 
-## ⚙️ Setup Instructions
+## ⚙️ Setup & Execution
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/glowise-ai-skincare-recommender.git
-cd glowise-ai-skincare-recommender
-```
-
-### 2. Create a virtual environment
+### 1. Environment Setup
 ```bash
 python -m venv venv
-# Windows
-.\venv\Scripts\activate
-# Mac/Linux
-source venv/bin/activate
+source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 ```
 
-### 3. Install dependencies
+### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the application
+### 3. Launch the Ritual
 ```bash
 streamlit run app/app.py
 ```
 
-## 🧪 Testing the CLI
-You can also run the system via command line to see the logic in action:
+## 🧪 Clinical Verification (CLI)
+Verify the recommendation logic directly in your terminal:
 ```bash
 python main.py
 ```
 
-## 🔮 Future Improvements
-
-- **Ingredient Database Expansion**: Integrate a larger, real-world skincare dataset (e.g., from Kaggle or scraping).
-- **Deep Learning**: Explore neural collaborative filtering for more complex user-product interactions.
-- **User Reviews**: Incorporate sentiment analysis of user reviews into the recommendation score.
-- **Dermatologist Validation**: Add a verification layer for ingredient benefit mappings.
-
 ---
-*Created as a demonstration of production-level AI/ML project structuring.*
+*Glowise: Elevating Skincare through Artificial Intelligence and Scientific Precision.*

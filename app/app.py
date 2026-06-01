@@ -217,19 +217,25 @@ with st.sidebar:
     
     scan_results = None
     if uploaded_file is not None:
-        with st.spinner("Analyzing skin..."):
+        with st.spinner("Analyzing skin via CNN..."):
             image_bytes = uploaded_file.read()
             scan_results = analyze_skin_image(image_bytes)
             if scan_results:
-                st.success("Analysis complete.")
+                st.success(f"Analysis complete via {scan_results['engine']}")
                 
                 cols = st.columns(3)
                 with cols[0]:
-                    st.metric("Redness", f"{int(scan_results['scores']['redness']*100)}%")
+                    st.metric("Redness/Acne", f"{int(max(scan_results['scores']['acne'], scan_results['scores']['sensitivity'])*100)}%")
                 with cols[1]:
-                    st.metric("Spots", f"{int(scan_results['scores']['dark_spots']*100)}%")
+                    st.metric("Pigmentation", f"{int(scan_results['scores']['brightening']*100)}%")
                 with cols[2]:
-                    st.metric("Texture", f"{int(scan_results['scores']['texture']*100)}%")
+                    st.metric("Surface Texture", f"{int(scan_results['scores']['texture']*100)}%")
+                
+                if scan_results["detected_concerns"]:
+                    with st.expander("Detected Concerns & Deep Learning Insights"):
+                        for c in scan_results["detected_concerns"]:
+                            st.markdown(f"- **{c.capitalize()}**: Detected with high confidence.")
+                        st.caption("Note: Scores represent feature activation levels in the CNN layers.")
     
     st.write("---")
     st.subheader("👤 Your Profile")
