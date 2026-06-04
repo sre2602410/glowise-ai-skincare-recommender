@@ -8,7 +8,8 @@ Glowise is a sophisticated, clinical-grade skincare recommendation system that c
 - **Sephora Intelligence**: Powered by a real-world dataset of over 1,400+ premium products from brands like *Tatcha*, *Drunk Elephant*, and *The Ordinary*.
 - **AM/PM Bespoke Rituals**: Automatically synchronizes your day and night cycles with specialized categories like *Treatments*, *Eye Creams*, and *Sunscreen*.
 - **Safety & Biocompatibility**: A rigorous rule-based engine that cross-references product formulations against your allergies and sensitivity profile.
-- **Minimalist Luxury UI**: A refined, high-end interface featuring a cream and charcoal palette, elegant serif typography, and full Dark Mode support.
+- **Dual Themes**: Switch between **Light (pink & white)** and **Dark (blue & black)** from the sidebar.
+- **Merged ML Catalog**: TF-IDF model trained on 1,500+ products from Sephora, cosmetics, and curated seed data.
 - **Explainable AI (XAI)**: Transparent, ingredient-focused insights that explain the scientific reasoning behind every selection.
 
 ## 🏗️ Architecture
@@ -56,7 +57,12 @@ source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 3. Launch the Ritual
+### 3. Train the recommendation model (merged datasets)
+```bash
+python -m src.train_model
+```
+
+### 4. Launch the Ritual
 ```bash
 streamlit run app/app.py
 ```

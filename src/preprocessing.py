@@ -48,8 +48,11 @@ def preprocess_dataframe(df):
         'Rank': 'rating'
     }
     for old_col, new_col in column_mapping.items():
-        if old_col in df.columns and new_col not in df.columns:
-            df[new_col] = df[old_col]
+        if old_col in df.columns:
+            if new_col not in df.columns:
+                df[new_col] = df[old_col]
+            else:
+                df[new_col] = df[new_col].fillna(df[old_col])
 
     # 2. Handle missing values
     df = df.fillna({
@@ -121,7 +124,25 @@ def preprocess_dataframe(df):
     df['skin_type'] = df['skin_type'].str.lower()
     df['concern'] = df['concern'].str.lower()
     
-    # 8. Remove duplicates
+    # 8. Normalize category labels for routine matching
+    category_aliases = {
+        'sun protect': 'Sunscreen',
+        'sunscreen': 'Sunscreen',
+        'spf': 'Sunscreen',
+        'face mask': 'Treatment',
+        'mask': 'Treatment',
+        'serum': 'Treatment',
+        'toner': 'Treatment',
+        'eye cream': 'Eye cream',
+        'cleanser': 'Cleanser',
+        'moisturizer': 'Moisturizer',
+        'treatment': 'Treatment',
+    }
+    df['category'] = df['category'].astype(str).str.strip().str.lower().map(
+        lambda c: category_aliases.get(c, c.title() if c else 'Treatment')
+    )
+
+    # 9. Remove duplicates
     df = df.drop_duplicates(subset=['product_name', 'brand'])
     
     return df

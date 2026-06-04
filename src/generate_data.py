@@ -202,7 +202,165 @@ data = [
         "usage": "Both",
         "sensitive_skin_safe": True,
         "rating": 4.7
-    }
+    },
+    # SUNSCREEN
+    {
+        "product_name": "Ultra Sheer Dry-Touch SPF 55",
+        "brand": "Neutrogena",
+        "ingredients": "Avobenzone, Homosalate, Octisalate, Octocrylene, Oxybenzone",
+        "skin_type": "All",
+        "concern": "Aging, Brightening",
+        "category": "Sunscreen",
+        "usage": "AM",
+        "sensitive_skin_safe": False,
+        "rating": 4.5
+    },
+    {
+        "product_name": "Unseen Sunscreen SPF 40",
+        "brand": "Supergoop!",
+        "ingredients": "Water, Dimethicone, Avobenzone, Homosalate, Octisalate",
+        "skin_type": "Oily, Combination, Normal",
+        "concern": "Pores, Texture",
+        "category": "Sunscreen",
+        "usage": "AM",
+        "sensitive_skin_safe": True,
+        "rating": 4.7
+    },
+    {
+        "product_name": "Anthelios Melt-In Milk SPF 60",
+        "brand": "La Roche-Posay",
+        "ingredients": "Water, Avobenzone, Homosalate, Octisalate, Glycerin, Niacinamide",
+        "skin_type": "Sensitive, Dry, All",
+        "concern": "Sensitivity, Aging",
+        "category": "Sunscreen",
+        "usage": "AM",
+        "sensitive_skin_safe": True,
+        "rating": 4.8
+    },
+    # EYE CREAM
+    {
+        "product_name": "Caffeine Solution 5% + EGCG",
+        "brand": "The Ordinary",
+        "ingredients": "Water, Caffeine, Epigallocatechin Gallatyl Glucoside",
+        "skin_type": "All",
+        "concern": "Aging, Brightening",
+        "category": "Eye cream",
+        "usage": "PM",
+        "sensitive_skin_safe": True,
+        "rating": 4.3
+    },
+    {
+        "product_name": "Potent-C Eye Serum",
+        "brand": "Peter Thomas Roth",
+        "ingredients": "Water, Tetrahexyldecyl Ascorbate, Hyaluronic Acid, Peptides",
+        "skin_type": "Normal, Dry",
+        "concern": "Aging, Brightening",
+        "category": "Eye cream",
+        "usage": "PM",
+        "sensitive_skin_safe": False,
+        "rating": 4.4
+    },
+    {
+        "product_name": "Eye Repair Cream",
+        "brand": "CeraVe",
+        "ingredients": "Water, Ceramide NP, Hyaluronic Acid, Niacinamide, Peptides",
+        "skin_type": "Sensitive, Dry, All",
+        "concern": "Hydration, Aging",
+        "category": "Eye cream",
+        "usage": "PM",
+        "sensitive_skin_safe": True,
+        "rating": 4.6
+    },
+    # ADDITIONAL TREATMENTS
+    {
+        "product_name": "Azelaic Acid Suspension 10%",
+        "brand": "The Ordinary",
+        "ingredients": "Azelaic Acid, Dimethicone, Polysilicone-11",
+        "skin_type": "Oily, Combination, Sensitive",
+        "concern": "Acne, Brightening, Texture",
+        "category": "Treatment",
+        "usage": "PM",
+        "sensitive_skin_safe": True,
+        "rating": 4.5
+    },
+    {
+        "product_name": "Good Genes Lactic Acid Treatment",
+        "brand": "Sunday Riley",
+        "ingredients": "Water, Lactic Acid, Licorice Extract, Lemongrass",
+        "skin_type": "Normal, Dry, Combination",
+        "concern": "Texture, Brightening, Aging",
+        "category": "Treatment",
+        "usage": "PM",
+        "sensitive_skin_safe": False,
+        "rating": 4.6
+    },
+    {
+        "product_name": "Alpha Arbutin 2% + HA",
+        "brand": "The Ordinary",
+        "ingredients": "Water, Alpha-Arbutin, Sodium Hyaluronate",
+        "skin_type": "All",
+        "concern": "Brightening, Dark Spots",
+        "category": "Treatment",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.6
+    },
+    {
+        "product_name": "Snail 96 Mucin Power Essence",
+        "brand": "COSRX",
+        "ingredients": "Snail Secretion Filtrate, Betaine, Sodium Hyaluronate, Panthenol",
+        "skin_type": "Dry, Sensitive, Normal",
+        "concern": "Hydration, Texture",
+        "category": "Treatment",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.8
+    },
+    {
+        "product_name": "Discoloration Defense Serum",
+        "brand": "SkinCeuticals",
+        "ingredients": "Water, Niacinamide, Tranexamic Acid, Kojic Acid, HEPES",
+        "skin_type": "All",
+        "concern": "Brightening, Aging",
+        "category": "Treatment",
+        "usage": "AM",
+        "sensitive_skin_safe": True,
+        "rating": 4.7
+    },
+    # EXTRA CLEANSERS & MOISTURIZERS
+    {
+        "product_name": "Hydrating Facial Cleanser",
+        "brand": "CeraVe",
+        "ingredients": "Water, Glycerin, Ceramide NP, Hyaluronic Acid, Niacinamide",
+        "skin_type": "Dry, Sensitive, Normal",
+        "concern": "Hydration, Sensitivity",
+        "category": "Cleanser",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.8
+    },
+    {
+        "product_name": "Ultra Facial Cream",
+        "brand": "Kiehl's",
+        "ingredients": "Water, Squalane, Glycerin, Glacial Glycoprotein",
+        "skin_type": "Dry, Normal",
+        "concern": "Hydration, Texture",
+        "category": "Moisturizer",
+        "usage": "Both",
+        "sensitive_skin_safe": True,
+        "rating": 4.7
+    },
+    {
+        "product_name": "Oil-Free Moisture SPF 15",
+        "brand": "Neutrogena",
+        "ingredients": "Water, Glycerin, Dimethicone, Avobenzone, Octinoxate",
+        "skin_type": "Oily, Combination",
+        "concern": "Hydration, Acne",
+        "category": "Moisturizer",
+        "usage": "AM",
+        "sensitive_skin_safe": True,
+        "rating": 4.4
+    },
 ]
 
 df = pd.DataFrame(data)

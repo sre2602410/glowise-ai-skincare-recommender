@@ -1,59 +1,71 @@
-from src.preprocessing import load_data, preprocess_dataframe
+from src.data_loader import load_all_datasets
 from src.safety_filter import filter_by_safety, get_default_irritants
 from src.recommender import SkincareRecommender
 from src.explainability import explain_recommendation
+from src.train_model import load_trained_model, train_recommender
 import os
+
+
+def get_product_catalog():
+    """Returns the merged, preprocessed product catalog."""
+    combined_path = os.path.join("data", "combined_products.csv")
+    if os.path.exists(combined_path):
+        from src.preprocessing import load_data, preprocess_dataframe
+        df = load_data(combined_path)
+        if df is not None:
+            return preprocess_dataframe(df)
+    return load_all_datasets()
+
 
 def get_routine(user_profile, avoided_ingredients=None):
     """
-    Builds a complete AM/PM routine.
+    Builds a complete AM/PM routine using the merged trained catalog.
     """
-    # Use real dataset if it exists, fallback to small one
-    if os.path.exists("data/sephora_products.csv"):
-        df = load_data("data/sephora_products.csv")
-    elif os.path.exists("data/cosmetics.csv"):
-        df = load_data("data/cosmetics.csv")
-    else:
-        df = load_data("data/skincare_products.csv")
-        
-    if df is None: return "Error: Could not load data."
-    
-    df = preprocess_dataframe(df)
+    df = get_product_catalog()
+    if df is None:
+        return "Error: Could not load data."
+
     is_sensitive = user_profile.get("is_sensitive", False)
-    safe_df = filter_by_safety(df, user_allergies=avoided_ingredients, is_sensitive=is_sensitive)
-    
+    safe_df = filter_by_safety(
+        df, user_allergies=avoided_ingredients, is_sensitive=is_sensitive
+    )
+
     if safe_df.empty:
         return "No products found matching your safety requirements."
-    
-    recommender = SkincareRecommender(safe_df)
+
+    artifact = load_trained_model()
+    recommender = SkincareRecommender(safe_df, artifact=artifact)
     routine = recommender.recommend_routine(user_profile)
-    
+
     irritants = get_default_irritants()
-    
-    # Process the routine to add explanations
     for time in ["AM", "PM"]:
         for cat, product in routine[time].items():
-            explanation = explain_recommendation(product, user_profile, irritants)
-            product['explanation'] = explanation
-            
+            product['explanation'] = explain_recommendation(
+                product, user_profile, irritants
+            )
+
     return routine
 
+
 if __name__ == "__main__":
-    # Example CLI Usage
+    if not os.path.exists("models/recommender_model.joblib"):
+        print("Training model on merged datasets...")
+        train_recommender(save=True)
+
     user_input = {
         "skin_type": "dry",
         "concern": "hydration",
         "is_sensitive": True
     }
     avoid = ["alcohol"]
-    
+
     print("--- Glowise AI Skincare Recommender ---")
     print(f"User Profile: {user_input}")
     print(f"Avoid: {avoid}")
     print("\nProcessing Routine...\n")
-    
+
     routine = get_routine(user_input, avoided_ingredients=avoid)
-    
+
     if isinstance(routine, str):
         print(routine)
     else:
